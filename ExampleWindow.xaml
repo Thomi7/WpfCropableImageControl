@@ -1,0 +1,88 @@
+﻿<Window x:Class="WpfCropableImageControl.ExampleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:collections="clr-namespace:System.Collections;assembly=System.Runtime.Extensions"
+        xmlns:local="clr-namespace:WpfCropableImageControl"
+        mc:Ignorable="d"
+        Title="PageModelWindow" SizeToContent="WidthAndHeight">
+
+    <Window.Resources>
+        <x:Array x:Key="Bitmaps" Type="BitmapImage">
+            <BitmapImage UriSource="pack://siteoforigin:,,,/exampleimages/Test1.png"/>
+            <BitmapImage UriSource="pack://siteoforigin:,,,/exampleimages/Test2.png"/>
+            <BitmapImage UriSource="pack://siteoforigin:,,,/exampleimages/Test3.png"/>
+        </x:Array>
+        <collections:ArrayList x:Key="Skips">
+            <!-- 50 50 200-->
+            <!--<controls:Skip SkipStart="25" SkipEnd="50" SkipType="Y"/>
+            <controls:Skip SkipStart="75" SkipEnd="100" SkipType="Y"/>
+            <controls:Skip SkipStart="105" SkipEnd="110" SkipType="Y"/>
+            <controls:Skip SkipStart="140" SkipEnd="160" SkipType="Y"/>
+            <controls:Skip SkipStart="170" SkipEnd="290" SkipType="Y"/>-->
+
+            <!--<controls:Skip SkipStart="0" SkipEnd="3" SkipType="Y"/>
+            <controls:Skip SkipStart="4" SkipEnd="10" SkipType="Y"/>
+            <controls:Skip SkipStart="170" SkipEnd="290" SkipType="Y"/>-->
+
+            <local:Skip SkipStart="20" SkipEnd="24" SkipType="X"/>
+            <local:Skip SkipStart="24" SkipEnd="30" SkipType="X"/>
+            <local:Skip SkipStart="31" SkipEnd="50" SkipType="X"/>
+        </collections:ArrayList>
+    </Window.Resources>
+
+
+    <StackPanel>
+
+        <StackPanel>
+            <Border Background="Green" Padding="10">
+                <!--<local:CropableImage Background="Red" Skips="{StaticResource Skips}" Bitmaps="{StaticResource Bitmaps}" ShiftY="20" CropHeight="50" ShiftX="30" CropWidth="1000">-->
+                <!-- ShiftY="5" CropWidth="70" ShiftX="5" CropHeight="150"-->
+                <StackPanel>
+                    <local:CropableImage Background="White" Skips="{StaticResource Skips}" Bitmaps="{StaticResource Bitmaps}" ShiftY="40">
+                        <local:CropableImage.LayoutTransform>
+                        <ScaleTransform>
+                                <ScaleTransform.ScaleX>3</ScaleTransform.ScaleX>
+                                <ScaleTransform.ScaleY>3</ScaleTransform.ScaleY>
+                        </ScaleTransform>
+                    </local:CropableImage.LayoutTransform>
+                </local:CropableImage>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+
+        <!--<Border>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" SnapsToDevicePixels="True">
+            <Image Source="pack://siteoforigin:,,,/models/PageModel/Test1.png"></Image>
+            <Image Source="pack://siteoforigin:,,,/models/PageModel/Test1.png"></Image>
+            <StackPanel.RenderTransform>
+                <ScaleTransform>
+                    <ScaleTransform.ScaleX>2</ScaleTransform.ScaleX>
+                    <ScaleTransform.ScaleY>2</ScaleTransform.ScaleY>
+                </ScaleTransform>
+            </StackPanel.RenderTransform>
+        </StackPanel>
+        </Border>-->
+
+        <!--<Border>
+            <Grid HorizontalAlignment="Center" SnapsToDevicePixels="True">
+                <Image Source="pack://siteoforigin:,,,/models/PageModel/Test1.png" Grid.Column="0"></Image>
+                <Image Source="pack://siteoforigin:,,,/models/PageModel/Test1.png" Grid.Column="1"></Image>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RenderTransform>
+                    <ScaleTransform>
+                        <ScaleTransform.ScaleX>2</ScaleTransform.ScaleX>
+                        <ScaleTransform.ScaleY>2</ScaleTransform.ScaleY>
+                    </ScaleTransform>
+                </Grid.RenderTransform>
+            </Grid>
+        </Border>-->
+
+
+    </StackPanel>
+
+</Window>
