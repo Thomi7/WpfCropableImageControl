@@ -15,13 +15,13 @@ namespace WpfCropableImageControl
 
         #region Bitmaps
 
-        public static readonly DependencyProperty BitmapsProperty = DependencyProperty.Register(nameof(Bitmaps), typeof(Array), typeof(CropableImage), new PropertyMetadata(Bitmaps_Changed));
-        public Array Bitmaps
+        public static readonly DependencyProperty ImagesProperty = DependencyProperty.Register(nameof(Images), typeof(Array), typeof(CropableImage), new PropertyMetadata(Images_Changed));
+        public Array Images
         {
-            get => (BitmapSource[])GetValue(BitmapsProperty);
-            set => SetValue(BitmapsProperty, value);
+            get => (BitmapSource[])GetValue(ImagesProperty);
+            set => SetValue(ImagesProperty, value);
         }
-        private static void Bitmaps_Changed(object sender, DependencyPropertyChangedEventArgs e)
+        private static void Images_Changed(object sender, DependencyPropertyChangedEventArgs e)
         {
             if (sender is CropableImage cropableImage && e.OldValue != e.NewValue)
                 cropableImage.UpdateGrid();
@@ -147,8 +147,6 @@ namespace WpfCropableImageControl
 
         #endregion
 
-        #endregion
-
         private int BigImageHeight;
 
         private int _bigImageWidth;
@@ -164,6 +162,15 @@ namespace WpfCropableImageControl
                 }
             }
         }
+
+        private int GridColumns
+        {
+            get => MainGrid.ColumnDefinitions.Count - 1;
+        }
+
+        #endregion
+
+        #region Verifiers
 
         private void CropHeight_Verify()
         {
@@ -195,6 +202,8 @@ namespace WpfCropableImageControl
                 ActualCropWidth = BigImageWidth - ShiftX;
         }
 
+        #endregion
+
         public CropableImage()
         {
             DataContext = this;
@@ -205,7 +214,7 @@ namespace WpfCropableImageControl
 
         private void UpdateGrid()
         {
-            if (Bitmaps != null)
+            if (Images != null)
             {
                 MainGrid.Children.Clear();
                 MainGrid.RowDefinitions.Clear();
@@ -213,12 +222,13 @@ namespace WpfCropableImageControl
 
                 var pixelHeight = 0;
                 var pixelWidth = 0;
-                foreach (var b in Bitmaps)
+                foreach (var b in Images)
                 {
-                    var image = b as BitmapImage;
-                    pixelHeight += image.PixelWidth;
-                    if (pixelWidth < image.PixelWidth)
-                        pixelWidth = image.PixelWidth;
+                    var image = b as ImageSource;
+                    pixelHeight += (int)Math.Round(image.Height);
+                    var width = (int)Math.Round(image.Width);
+                    if (pixelWidth < width)
+                        pixelWidth = width;
                 }
 
                 var verticalImageParts = new List<ImagePart>();
@@ -323,8 +333,8 @@ namespace WpfCropableImageControl
             //var st = new UserControl() {  };
 
             var shiftStackPanel = new StackPanel();
-            foreach (var b in Bitmaps)
-                shiftStackPanel.Children.Add(new Image() { Source = b as BitmapImage });
+            foreach (var b in Images)
+                shiftStackPanel.Children.Add(new Image() { Source = b as BitmapSource });
 
             var sizeStackPanel = new StackPanel() { Height = imagePart.Height, Width = 100 };
             sizeStackPanel.Children.Add(shiftStackPanel);
@@ -347,11 +357,6 @@ namespace WpfCropableImageControl
             public int Y;
             public int Width;
             public int Height;
-        }
-
-        private int GridColumns
-        {
-            get => MainGrid.ColumnDefinitions.Count - 1;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

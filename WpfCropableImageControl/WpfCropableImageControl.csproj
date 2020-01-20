@@ -4,9 +4,29 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
     <PackageId>Thomi.WpfCropableImageControl</PackageId>
+    <Title>WpfCropableImageControl</Title>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Copyright>2020</Copyright>
     <Authors>Thomi</Authors>
+    <Product />
+    <Company />
+    <PackageTags>WPF; Image Control; ImageControl; CropableImage; CropableImage Control; Editable Image Control</PackageTags>
+    <Description>A simple WPF Control that crops an image only by using tricks with the renderer (no image processing in background).
+
+Additional Features:
+- the control takes an Array of images (ImageSources) that will be stacked vertically to form one big image
+- you can define areas (from the images) that should be skipped in the rendering process
+
+For an example take a look at:
+https://github.com/Thomi7/WpfCropableImageControl</Description>
+    <PackageProjectUrl>https://github.com/Thomi7/WpfCropableImageControl</PackageProjectUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <RepositoryUrl>https://github.com/Thomi7/WpfCropableImageControl</RepositoryUrl>
+    <Version>1.0.1</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants />
   </PropertyGroup>
 
 </Project>

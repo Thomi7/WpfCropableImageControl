@@ -40,7 +40,7 @@
                 <!--<local:CropableImage Background="Red" Skips="{StaticResource Skips}" Bitmaps="{StaticResource Bitmaps}" ShiftY="20" CropHeight="50" ShiftX="30" CropWidth="1000">-->
                 <!-- ShiftY="5" CropWidth="70" ShiftX="5" CropHeight="150"-->
                 <StackPanel>
-                    <control:CropableImage Background="White" Skips="{StaticResource Skips}" Bitmaps="{StaticResource Bitmaps}" ShiftY="40">
+                    <control:CropableImage Background="White" Skips="{StaticResource Skips}" Images="{StaticResource Bitmaps}" ShiftY="40">
                         <control:CropableImage.LayoutTransform>
                         <ScaleTransform>
                                 <ScaleTransform.ScaleX>3</ScaleTransform.ScaleX>
