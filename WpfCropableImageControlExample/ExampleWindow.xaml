@@ -1,10 +1,10 @@
-﻿<Window x:Class="WpfCropableImageControl.ExampleWindow"
+﻿<Window x:Class="WpfCropableImageControlExample.ExampleWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:collections="clr-namespace:System.Collections;assembly=System.Runtime.Extensions"
-        xmlns:local="clr-namespace:WpfCropableImageControl"
+        xmlns:control="clr-namespace:WpfCropableImageControl;assembly=WpfCropableImageControl"
         mc:Ignorable="d"
         Title="PageModelWindow" SizeToContent="WidthAndHeight">
 
@@ -26,9 +26,9 @@
             <controls:Skip SkipStart="4" SkipEnd="10" SkipType="Y"/>
             <controls:Skip SkipStart="170" SkipEnd="290" SkipType="Y"/>-->
 
-            <local:Skip SkipStart="20" SkipEnd="24" SkipType="X"/>
-            <local:Skip SkipStart="24" SkipEnd="30" SkipType="X"/>
-            <local:Skip SkipStart="31" SkipEnd="50" SkipType="X"/>
+            <control:Skip SkipStart="20" SkipEnd="24" SkipType="X"/>
+            <control:Skip SkipStart="24" SkipEnd="30" SkipType="X"/>
+            <control:Skip SkipStart="31" SkipEnd="50" SkipType="X"/>
         </collections:ArrayList>
     </Window.Resources>
 
@@ -40,14 +40,14 @@
                 <!--<local:CropableImage Background="Red" Skips="{StaticResource Skips}" Bitmaps="{StaticResource Bitmaps}" ShiftY="20" CropHeight="50" ShiftX="30" CropWidth="1000">-->
                 <!-- ShiftY="5" CropWidth="70" ShiftX="5" CropHeight="150"-->
                 <StackPanel>
-                    <local:CropableImage Background="White" Skips="{StaticResource Skips}" Bitmaps="{StaticResource Bitmaps}" ShiftY="40">
-                        <local:CropableImage.LayoutTransform>
+                    <control:CropableImage Background="White" Skips="{StaticResource Skips}" Bitmaps="{StaticResource Bitmaps}" ShiftY="40">
+                        <control:CropableImage.LayoutTransform>
                         <ScaleTransform>
                                 <ScaleTransform.ScaleX>3</ScaleTransform.ScaleX>
                                 <ScaleTransform.ScaleY>3</ScaleTransform.ScaleY>
                         </ScaleTransform>
-                    </local:CropableImage.LayoutTransform>
-                </local:CropableImage>
+                    </control:CropableImage.LayoutTransform>
+                </control:CropableImage>
                 </StackPanel>
             </Border>
         </StackPanel>

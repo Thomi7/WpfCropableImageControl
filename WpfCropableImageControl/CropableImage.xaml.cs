@@ -2,13 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
@@ -23,7 +18,7 @@ namespace WpfCropableImageControl
         public static readonly DependencyProperty BitmapsProperty = DependencyProperty.Register(nameof(Bitmaps), typeof(Array), typeof(CropableImage), new PropertyMetadata(Bitmaps_Changed));
         public Array Bitmaps
         {
-            get => (BitmapImage[])GetValue(BitmapsProperty);
+            get => (BitmapSource[])GetValue(BitmapsProperty);
             set => SetValue(BitmapsProperty, value);
         }
         private static void Bitmaps_Changed(object sender, DependencyPropertyChangedEventArgs e)

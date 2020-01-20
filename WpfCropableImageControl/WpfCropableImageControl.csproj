@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <PackageId>Thomi.WpfCropableImageControl</PackageId>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Copyright>2020</Copyright>
+    <Authors>Thomi</Authors>
+  </PropertyGroup>
+
+</Project>
