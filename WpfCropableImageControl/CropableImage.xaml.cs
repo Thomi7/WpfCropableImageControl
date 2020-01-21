@@ -13,12 +13,12 @@ namespace WpfCropableImageControl
     {
         #region Properties
 
-        #region Bitmaps
+        #region Images
 
         public static readonly DependencyProperty ImagesProperty = DependencyProperty.Register(nameof(Images), typeof(Array), typeof(CropableImage), new PropertyMetadata(Images_Changed));
         public Array Images
         {
-            get => (BitmapSource[])GetValue(ImagesProperty);
+            get => (Array)GetValue(ImagesProperty);
             set => SetValue(ImagesProperty, value);
         }
         private static void Images_Changed(object sender, DependencyPropertyChangedEventArgs e)
