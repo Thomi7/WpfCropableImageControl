@@ -69,7 +69,7 @@ namespace WpfCropableImageControl
                 if (CropHeight.Value > BigImageHeight - ShiftY)
                 {
                     if (BigImageHeight - ShiftY >= 0)
-                        ActualCropHeight = BigImageHeight - ShiftY;
+                        ActualCropHeight = BigImageHeight.Value - ShiftY;
                     else
                         ActualCropHeight = 0;
                 }
@@ -81,7 +81,7 @@ namespace WpfCropableImageControl
             else
             {
                 if (BigImageHeight - ShiftY >= 0)
-                    ActualCropHeight = BigImageHeight - ShiftY;
+                    ActualCropHeight = BigImageHeight.Value - ShiftY;
                 else
                     ActualCropHeight = 0;
             }
@@ -126,7 +126,7 @@ namespace WpfCropableImageControl
                 if (CropWidth.Value > BigImageWidth - ShiftX)
                 {
                     if (BigImageWidth - ShiftX >= 0)
-                        ActualCropWidth = BigImageWidth - ShiftX;
+                        ActualCropWidth = BigImageWidth.Value - ShiftX;
                     else
                         ActualCropWidth = 0;
                 }
@@ -138,7 +138,7 @@ namespace WpfCropableImageControl
             else
             {
                 if (BigImageWidth - ShiftX >= 0)
-                    ActualCropWidth = BigImageWidth - ShiftX;
+                    ActualCropWidth = BigImageWidth.Value - ShiftX;
                 else
                     ActualCropWidth = 0;
             }
@@ -199,8 +199,8 @@ namespace WpfCropableImageControl
 
         #endregion
 
-        private int _bigImageHeight;
-        public int BigImageHeight
+        private int? _bigImageHeight;
+        public int? BigImageHeight
         {
             get => _bigImageHeight;
             private set
@@ -213,8 +213,8 @@ namespace WpfCropableImageControl
             }
         }
 
-        private int _bigImageWidth;
-        public int BigImageWidth
+        private int? _bigImageWidth;
+        public int? BigImageWidth
         {
             get => _bigImageWidth;
             private set
@@ -390,7 +390,7 @@ namespace WpfCropableImageControl
 
     public struct Skip
     {
-        public SkipType _skipType;
+        private SkipType _skipType;
         public SkipType SkipType
         {
             get
