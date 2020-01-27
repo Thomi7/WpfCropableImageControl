@@ -10,8 +10,8 @@
     <Authors>Thomi</Authors>
     <Product />
     <Company />
-    <PackageTags>WPF; Image Control; ImageControl; CropableImage; CropableImage Control; Editable Image Control</PackageTags>
-    <Description>A simple WPF Control that crops an image only by using tricks with the renderer (no image processing in background).
+    <PackageTags>WPF; Image; Control; Cropable; Editable</PackageTags>
+    <Description>A simple WPF Control that crops an image by making use of the WPF renderer (no image processing in background).
 
 Additional Features:
 - the control takes an Array of images (ImageSources) that will be stacked vertically to form one big image
@@ -22,7 +22,7 @@ https://github.com/Thomi7/WpfCropableImageControl</Description>
     <PackageProjectUrl>https://github.com/Thomi7/WpfCropableImageControl</PackageProjectUrl>
     <RepositoryType>GitHub</RepositoryType>
     <RepositoryUrl>https://github.com/Thomi7/WpfCropableImageControl</RepositoryUrl>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
