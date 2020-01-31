@@ -386,7 +386,7 @@ namespace WpfCropableImageControl
         }
     }
 
-    public struct Skip
+    public class Skip
     {
         private SkipType _skipType;
         public SkipType SkipType
@@ -427,6 +427,14 @@ namespace WpfCropableImageControl
             {
                 if (_skipEnd != value)
                     _skipEnd = value;
+            }
+        }
+
+        public int SkipHeight
+        {
+            get
+            {
+                return SkipEnd - SkipStart;
             }
         }
     }

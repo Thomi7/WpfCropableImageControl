@@ -10,7 +10,7 @@
     <Authors>Thomi</Authors>
     <Product />
     <Company />
-    <PackageTags>WPF; Image; Control; Cropable; Editable</PackageTags>
+    <PackageTags>WPF; Image; Control; Cropable; Editable; ImageControl</PackageTags>
     <Description>A simple WPF Control that crops an image by making use of the WPF renderer (no image processing in background).
 
 Additional Features:
@@ -19,10 +19,12 @@ Additional Features:
 
 For an example take a look at:
 https://github.com/Thomi7/WpfCropableImageControl</Description>
-    <PackageProjectUrl>https://github.com/Thomi7/WpfCropableImageControl</PackageProjectUrl>
+    <PackageProjectUrl></PackageProjectUrl>
     <RepositoryType>GitHub</RepositoryType>
     <RepositoryUrl>https://github.com/Thomi7/WpfCropableImageControl</RepositoryUrl>
-    <Version>1.0.4</Version>
+    <Version>1.0.5</Version>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageIconUrl />
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -32,5 +34,12 @@ https://github.com/Thomi7/WpfCropableImageControl</Description>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>DEBUG;TRACE</DefineConstants>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Resources/icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
